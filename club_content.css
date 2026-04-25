@@ -1,0 +1,52 @@
+:root { 
+    --EMCC-Color: #6f42c1;
+    --text-light: #ffffff;
+    --font-family: 'Lato', sans-serif;
+}
+.club_header {
+    position: relative;
+    height: 60vh;
+    display: flex;
+    flex-direction: column; /* Stack the title and paragraph vertically */
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    /* IMAGE: Background Image */
+    background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTyjidfyUc5wxz5Wcy_gFcDHLiiALXblri48A&s");
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+    font-family: var(--font-family);
+}
+
+/* EMCC COLOR OVERLAY: Purple */
+.club_header::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: var(--EMCC-Color);
+    opacity: 0.6; 
+    z-index: 1; /* Layer 1: The "Glass" */
+}
+
+/* THE TEXT CONTAINER */
+.title-header, .paragraph-header {
+    position: relative; /* Required for z-index to work */
+    z-index: 2;        /* Layer 2: Pulls text in front of the purple glass */
+    color: var(--text-light);
+    margin: 0;
+}
+
+.title-header {
+    font-weight: 300;   /* Lato Light */
+    font-size: 64px;
+    line-height: 1.1;
+}
+
+.paragraph-header {
+    font-weight: 400;   /* Changed to 400 so it's readable at 11px */
+    font-size: 11px;
+    margin-top: 10px;
+    letter-spacing: 1px;
+}
