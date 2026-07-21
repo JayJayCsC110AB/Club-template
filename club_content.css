@@ -6,6 +6,40 @@ body {
   line-height: 1.6;
 }
 
+/* ── SKIP LINK ── */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: #5a2d82;
+  color: white;
+  padding: 8px;
+  text-decoration: none;
+  z-index: 100;
+  border-radius: 0 0 4px 0;
+}
+
+.skip-link:focus {
+  top: 0;
+}
+
+/* ── FOCUS STYLES ── */
+a:focus,
+button:focus,
+input:focus,
+textarea:focus,
+select:focus {
+  outline: 3px solid #f5c53a;
+  outline-offset: 2px;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  font-family: inherit;
+  font-size: inherit;
+}
+
 /* ── NAV ── */
 nav {
   background: linear-gradient(135deg, #5a2d82 0%, #642667 100%);
@@ -56,6 +90,11 @@ nav {
 .nav-links a:hover::after {
   width: 100%;
 }
+.nav-links a:focus {
+  outline: 2px solid #f5c53a;
+  outline-offset: 4px;
+  border-radius: 2px;
+}
 
 
 /* ── HERO ── */
@@ -101,11 +140,100 @@ nav {
   transform: translateY(-3px);
   box-shadow: 0 8px 20px rgba(0,0,0,0.3);
 }
+.ig-btn:focus {
+  outline: 3px solid rgba(255, 255, 255, 0.8);
+  outline-offset: 3px;
+}
 .ig-btn svg { width: 26px; height: 26px; fill: #fff; }
 
 
 
-/* ── NAV VARIANTS ── */
+/* ── FAQ SECTION ── */
+.faq-section {
+  padding: 60px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  background: #f8f9fa;
+}
+
+.faq-inner {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.faq-inner h2 {
+  font-size: 2rem;
+  margin-bottom: 36px;
+  color: #2c3e50;
+}
+
+.faq-item {
+  margin-bottom: 16px;
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  transition: box-shadow 0.3s ease;
+}
+
+.faq-item.open {
+  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+}
+
+.faq-btn {
+  width: 100%;
+  padding: 18px 24px;
+  text-align: left;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #2c3e50;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background-color 0.3s ease;
+}
+
+.faq-btn:hover {
+  background-color: rgba(90, 45, 130, 0.05);
+}
+
+.faq-btn:focus {
+  outline: 3px solid #f5c53a;
+  outline-offset: -3px;
+  background-color: rgba(90, 45, 130, 0.08);
+}
+
+.faq-btn svg {
+  width: 24px;
+  height: 24px;
+  stroke: #5a2d82;
+  stroke-width: 2;
+  transition: transform 0.3s ease;
+  flex-shrink: 0;
+}
+
+.faq-item.open .faq-btn svg {
+  transform: rotate(180deg);
+}
+
+.faq-body {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+}
+
+.faq-item.open .faq-body {
+  max-height: 500px;
+}
+
+.faq-body p {
+  padding: 0 24px 18px;
+  color: #555;
+  line-height: 1.8;
+}
 .nav-about {
   background: linear-gradient(135deg, #f5c53a 0%, #f5c53a 100%);
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
@@ -238,9 +366,21 @@ nav {
   cursor: pointer;
   aspect-ratio: 1 / 1;
   box-shadow: 0 20px 45px rgba(0,0,0,0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, outline 0.2s ease;
   background: #111;
   display: grid;
+  border: none;
+  padding: 0;
+}
+
+.gallery-grid .event-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 28px 58px rgba(0,0,0,0.16);
+}
+
+.gallery-grid .event-card:focus {
+  outline: 4px solid #f5c53a;
+  outline-offset: 3px;
 }
 
 .gallery-grid .event-card:hover {
@@ -346,6 +486,13 @@ nav {
   color: #2c3e50;
 }
 
+.lightbox-close:focus {
+  outline: 3px solid #f5c53a;
+  outline-offset: 2px;
+  background: rgba(245,197,58,0.95);
+  color: #2c3e50;
+}
+
 .lightbox-content {
   display: grid;
   grid-template-columns: 56px minmax(0, 1fr) 56px;
@@ -389,6 +536,12 @@ nav {
   background: rgba(245,197,58,0.28);
 }
 
+.lightbox-nav:focus {
+  outline: 3px solid #f5c53a;
+  outline-offset: 2px;
+  background: rgba(245,197,58,0.35);
+}
+
 .lightbox-caption {
   color: #fff;
   font-size: 1rem;
@@ -422,6 +575,12 @@ nav {
 .lightbox-thumb:hover {
   transform: translateY(-2px);
   opacity: 0.95;
+}
+
+.lightbox-thumb:focus {
+  outline: 3px solid #f5c53a;
+  outline-offset: 2px;
+  border-color: #f5c53a;
 }
 
 .lightbox-thumb img,
@@ -526,11 +685,18 @@ nav {
   border-radius: 999px;
   box-shadow: 0 12px 30px rgba(0,0,0,0.22);
   transition: transform 0.25s ease, opacity 0.25s ease;
+  border: none;
+  cursor: pointer;
 }
 
 .hero-cta:hover {
   transform: translateY(-2px);
   opacity: 0.95;
+}
+
+.hero-cta:focus {
+  outline: 3px solid rgba(0, 0, 0, 0.3);
+  outline-offset: 3px;
 }
 
 .page-content {
@@ -956,12 +1122,19 @@ calendar-contact p {
 .canvas-banner a {
   color: #5a2d82;
   font-weight: 700;
-  text-decoration: none;
+  text-decoration: underline;
   transition: opacity 0.3s ease;
 }
 
 .canvas-banner a:hover {
   opacity: 0.8;
+}
+
+.canvas-banner a:focus {
+  outline: 3px solid #5a2d82;
+  outline-offset: 2px;
+  border-radius: 2px;
+}
   text-decoration: underline;
 }
 
@@ -1060,12 +1233,17 @@ calendar-contact p {
 .contact-note a {
   color: #5a2d82;
   font-weight: 700;
-  text-decoration: none;
+  text-decoration: underline;
   transition: color 0.3s ease;
 }
 
 .contact-note a:hover {
   color: #f5c53a;
+}
+
+.contact-note a:focus {
+  outline: 3px solid #5a2d82;
+  outline-offset: 2px;
 }
 
 /* ── GOOGLE FORM EMBED ── */
@@ -1074,6 +1252,13 @@ calendar-contact p {
   border-radius: 8px;
   overflow: hidden;
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.gform-embed iframe {
+  border: none;
+  display: block;
+  width: 100%;
+  height: 800px;
 }
 
 .gform-embed iframe {

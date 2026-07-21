@@ -1,0 +1,10 @@
+var fso = new ActiveXObject('Scripting.FileSystemObject');
+var file = fso.OpenTextFile('BSUGallery.html', 1, false, -1);
+var text = file.ReadAll();
+file.Close();
+text = text.split('src="file:///C:/Users/le5el/OneDrive/Pictures/BSU_Gallery/').join('src="BSU_Gallery/');
+text = text.split("src='file:///C:/Users/le5el/OneDrive/Pictures/BSU_Gallery/").join("src='BSU_Gallery/");
+file = fso.OpenTextFile('BSUGallery.html', 2, false, -1);
+file.Write(text);
+file.Close();
+WScript.Echo('patched');

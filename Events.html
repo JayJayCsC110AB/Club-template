@@ -7,7 +7,9 @@
     <link rel="stylesheet" href="club_content.css">
 </head>
 <body>
-<nav>
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<nav role="navigation" aria-label="Main navigation">
   <span class="nav-brand">BSU @ EMCC</span>
   <ul class="nav-links">
     <li><a href="home.html">Home</a></li>
@@ -22,11 +24,11 @@
   <div class="hero-content">
     <h1>Events & Community</h1>
     <p>Discover BSU gatherings, meetings, and campus events designed to connect, uplift, and support EMCC students.</p>
-    <a class="hero-cta" href="mailto:bsu@estrellamountain.edu">Contact BSU</a>
+    <a class="hero-cta" href="mailto:bsu@estrellamountain.edu" aria-label="Contact BSU via email">Contact BSU</a>
   </div>
 </div>
 
-<main class="page-content">
+<main id="main-content">
   <section class="section-card event-overview">
     <div class="section-header">
       <span class="section-tag">Upcoming</span>
@@ -62,7 +64,7 @@
         frameborder="0"
         scrolling="no"
         loading="lazy"
-        title="BSU Calendar">
+        title="BSU Calendar - View upcoming events and meetings">
       </iframe>
     </div>
     <p class="calendar-note">If you have any questions about the events above, please reach out to <a href="mailto:bsu@estrellamountain.edu">bsu@estrellamountain.edu</a>.</p>
@@ -72,7 +74,9 @@
     </div>
   </section>
 
-<footer>
+</main>
+
+<footer role="contentinfo">
   © 2025 Black Student Union @ EMCC · <a href="mailto:bsu@estrellamountain.edu">bsu@estrellamountain.edu</a>
 </footer>
 </body>
